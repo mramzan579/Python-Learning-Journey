@@ -39,3 +39,9 @@ elif resistance == 0 :
     print("The infinity error. The value of resistance should not be zero.")
 else:
     print("The value of resistance should not be negative.")
+variable_a=True
+variable_b=False
+if variable_a & variable_b == True :
+    print("Signal High")
+else:
+    print("Signal Low")
