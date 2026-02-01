@@ -29,3 +29,13 @@ print(f"The average temprature is : {temp_average}C")
 top_row=["Q","W","E","R","T"]
 top_row[3]="FAULTY"
 print(top_row)
+
+voltage = float(input("Input the value of volatge   "))
+resistance = int(input("Input the value of Resistance   "))
+if resistance > 0:
+    current = voltage / resistance
+    print(f"The current is: {current}")
+elif resistance == 0 :
+    print("The infinity error. The value of resistance should not be zero.")
+else:
+    print("The value of resistance should not be negative.")
