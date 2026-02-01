@@ -45,3 +45,15 @@ if variable_a & variable_b == True :
     print("Signal High")
 else:
     print("Signal Low")
+
+values=[10,20,30]
+values.append(40)
+print(values)
+
+led_state="pulse"
+if led_state=="pulsing":
+    print("PWM Active")
+elif led_state=="on":
+    print("Active")
+else:
+    print("State unknown")
