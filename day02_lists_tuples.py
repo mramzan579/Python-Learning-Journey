@@ -41,3 +41,8 @@ print(data_after_filteration)
 packet = ["HEADER", 0xAF, 0x12, 0x55, "CRC_OK"]
 payload= packet [1:-1]
 print(payload)
+#The Component Inventory (Delete & Remove)
+components_inventory=["Resistor","Inductor","Capacitor","Transistor","LED","ICs"]
+components_inventory.remove("Inductor")
+components_inventory.pop()
+print(components_inventory)
