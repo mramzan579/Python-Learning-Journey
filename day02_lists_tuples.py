@@ -28,3 +28,8 @@ buffer.append(25.0)
 if len(buffer)>3:
     buffer.pop(0) #removes the last reading
     print(buffer)
+
+#The Logic Level Gate (In-Place Update)
+pins = [True, True, False, True]    
+pins[2]=True
+print(f"Pin 3 is corrected in list :{pins}")
