@@ -33,3 +33,11 @@ if len(buffer)>3:
 pins = [True, True, False, True]    
 pins[2]=True
 print(f"Pin 3 is corrected in list :{pins}")
+#Data selection / slicing / filtering pipeline
+data_received=[20,30,40,50,60]
+data_after_filteration=[data_received[1],data_received[2],data_received[3]]
+print(data_after_filteration)
+
+packet = ["HEADER", 0xAF, 0x12, 0x55, "CRC_OK"]
+payload= packet [1:-1]
+print(payload)
