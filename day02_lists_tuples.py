@@ -26,7 +26,7 @@ buffer = [22.1, 23.5, 21.8]
 buffer.append(25.0)
 #applying condition if len of list increases from 3 then to pop the last number index 0
 if len(buffer)>3:
-    buffer.pop(0) #removes the last reading
+    buffer.pop(0) #removes the first reading
     print(buffer)
 
 #The Logic Level Gate (In-Place Update)
