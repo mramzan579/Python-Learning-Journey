@@ -11,7 +11,7 @@ minutes=34
 seconds_in_this_hour=minutes*60
 remaining_seconds=3600-seconds_in_this_hour
 print(f"Remaining time: {remaining_seconds}s")
-
+#applying conditions for current situation
 current_amps=2.5
 max_limit=2.0
 if (current_amps>max_limit):
@@ -29,7 +29,7 @@ print(f"The average temprature is : {temp_average}C")
 top_row=["Q","W","E","R","T"]
 top_row[3]="FAULTY"
 print(top_row)
-
+#Ohm's Law calculator
 voltage = float(input("Input the value of volatge   "))
 resistance = int(input("Input the value of Resistance   "))
 if resistance > 0:
@@ -49,7 +49,7 @@ else:
 values=[10,20,30]
 values.append(40)
 print(values)
-
+#described home LED state
 led_state="pulse"
 if led_state=="pulsing":
     print("PWM Active")
@@ -57,3 +57,19 @@ elif led_state=="on":
     print("Active")
 else:
     print("State unknown")
+
+pins=["GPI01","GPI02","GPI03","ADC0"]
+pins[3]="ADC10"
+print(pins)
+
+input_v=210
+if input_v>100&input_v<220:
+    print("Adapter Safe")
+else:
+    print("Input Surge: Fuse Blown")
+#Battery Health Monitor
+battery_voltage=12
+if battery_voltage>=12.6:
+    print("The battery is Full.")
+elif battery_voltage>12.0 & battery_voltage<12.5:
+    print("The health situation Good.")
