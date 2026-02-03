@@ -20,3 +20,11 @@ electric_components.remove("Resistance=5ohms")
 print(electric_components)
 electric_components.append("Power=1.35watts")
 print(electric_components)
+
+#The signal buffer(append&pop)
+buffer = [22.1, 23.5, 21.8]
+buffer.append(25.0)
+#applying condition if len of list increases from 3 then to pop the last number index 0
+if len(buffer)>3:
+    buffer.pop(0) #removes the last reading
+    print(buffer)
