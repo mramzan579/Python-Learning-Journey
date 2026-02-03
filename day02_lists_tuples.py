@@ -46,3 +46,11 @@ components_inventory=["Resistor","Inductor","Capacitor","Transistor","LED","ICs"
 components_inventory.remove("Inductor")
 components_inventory.pop()
 print(components_inventory)
+
+#The Diagnostic Report (List Methods & Conditions)
+report_list=["E01","E04" , "E404"]
+if "E04" in report_list:
+    print("Critical: Voltage Sag detected (E04)")
+    print(len(report_list))
+
+    
