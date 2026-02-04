@@ -52,8 +52,6 @@ report_list=["E01","E04" , "E404"]
 if "E04" in report_list:
     print("Critical: Voltage Sag detected (E04)")
     print(len(report_list))
-
-<<<<<<< HEAD
 #Tabs Currently opened in my browser
 tabs=["LinkedIn","Youtube","Hostinger","Wikipedia"]
 work_tabs=tabs[0:3]
@@ -67,6 +65,3 @@ fav_movie_3=input("Enter names of your third fav movie  ")
 movies=[fav_movie_1,fav_movie_2,fav_movie_3]
 print(movies)
 
-=======
-    
->>>>>>> 2eb707dabd1ee2ed5a6b36921eb4904f8b495ca6
