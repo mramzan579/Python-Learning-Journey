@@ -8,7 +8,7 @@ print(student_data[0:3])
 print(student_data[-4:-2])
 student_data[0]="Muhammad Ramzan"
 print(student_data)
-#list update
+#list methods
 electric_components=["Resistance=5ohms","current=0.5amp","voltage=2.5volts"]
 electric_components[1]="current=0.54amp"
 print(electric_components)
