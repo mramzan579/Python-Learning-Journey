@@ -1,3 +1,4 @@
+#No any use of functions or loops just conditions and simple concepts
 print("Ohm's Law Calculator")
 choice=int(input("What do you want to find choose one of the following by entering the number : 1. Voltage, 2. Current, 3. Resistance"))
 if choice == 1:
