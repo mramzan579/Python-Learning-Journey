@@ -1,3 +1,4 @@
+#No any use of functions or loops just conditions and simple concepts
 print("Student Marks Analyser")
 
 #Enter marks manually for each subject
