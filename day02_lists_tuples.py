@@ -26,7 +26,7 @@ buffer = [22.1, 23.5, 21.8]
 buffer.append(25.0)
 #applying condition if len of list increases from 3 then to pop the last number index 0
 if len(buffer)>3:
-    buffer.pop(0) #removes the last reading
+    buffer.pop(0) #removes the first reading
     print(buffer)
 
 #The Logic Level Gate (In-Place Update)
@@ -53,4 +53,16 @@ if "E04" in report_list:
     print("Critical: Voltage Sag detected (E04)")
     print(len(report_list))
 
-    
+#Tabs Currently opened in my browser
+tabs=["LinkedIn","Youtube","Hostinger","Wikipedia"]
+work_tabs=tabs[0:3]
+tabs[2]="GitHub"
+print(f"All tabs opened in browser are :{tabs} and working tabs are : {work_tabs}")
+
+#taking input from user and saving in a list
+fav_movie_1=input("Enter names of your first fav movie  ")
+fav_movie_2=input("Enter names of your second fav movie  ")
+fav_movie_3=input("Enter names of your third fav movie  ")
+movies=[fav_movie_1,fav_movie_2,fav_movie_3]
+print(movies)
+
