@@ -4,6 +4,8 @@ input_from_user=input("Enter units consumed each day in a week separated by spac
 units=[int(m) for m in input_from_user.split()]
 if len(units)!=7:
     print("Error: Please enter 7 values.")
+elif any(m < 0 for m in units):
+    print("Error: Units cannot be negative.")
 else:
     #consumption tracking
     total_units=sum(units)
