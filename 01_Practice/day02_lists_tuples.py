@@ -3,7 +3,7 @@ print(marks)
 marks[0]=55
 print(marks)
 #list slicing
-student_data=["M Ramzan","Semester-II","GPA=3.7", "age=18"]
+student_data=["M Ramzan","Semester-II","GGPA=3.7", "age=18"]
 print(student_data[0:3])
 print(student_data[-4:-2])
 student_data[0]="Muhammad Ramzan"
