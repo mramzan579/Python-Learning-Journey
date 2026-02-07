@@ -99,3 +99,63 @@ elif user_demand == "deposit":
 
 else:
     print("System Error! Try Again")
+
+
+# Exercise 6 – Separate Even and Odd Numbers
+
+random_numbers = [3,5,6,9,0,2,65,73,567,345]
+
+evens = []
+odds = []
+
+# loop through numbers and classify
+for item in random_numbers:
+    if item % 2 == 0:
+        evens.append(item)
+    else:
+        odds.append(item)
+
+print("Even numbers:", evens)
+print("Odd numbers:", odds)
+
+
+
+# Exercise 7 – Inventory Lookup System
+
+
+inventory = {"apple": 50, "banana": 20, "orange": 30}
+
+user_input = input("What fruit do you want to eat: ")
+
+# check if fruit exists in inventory
+if user_input in inventory:
+    print(f"The quantity of {user_input}: {inventory[user_input]}")
+else:
+    print("Fruit out of stock")
+
+
+
+# Exercise 8 – Vowel Counter
+
+vwl_check = input("Write any word or sentence: ")
+
+vowels = "aeiouAEIOU"
+count = 0
+
+# count vowels using loop
+for ch in vwl_check:
+    if ch in vowels:
+        count += 1
+
+print(f"Total vowels: {count}")
+
+
+
+# Exercise 9 – Multiplication Table Generator
+
+num = int(input("Enter number for table: "))
+
+# generate table from 1 to 10
+for i in range(1, 11):
+    table = num * i
+    print(table)
