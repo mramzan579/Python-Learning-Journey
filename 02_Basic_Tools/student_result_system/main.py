@@ -15,7 +15,7 @@ students_data={
 for name,marks in students_data.items():
     total=sum(marks)
     avg=total/len(marks)
-    percentage=(total/(100*len(marks)))*100#Taking percentage of marks
+    percentage=(total/400)*100#Taking percentage of marks
     #setting conditions for final grading
     if percentage>=90:
         grade="A+"
