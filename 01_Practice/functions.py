@@ -31,9 +31,9 @@ print(length)
 
 #WAF to print elements of  alist in single line
 cities=["Lahore","Karachi","Attock"]
-def element_in_line(cities):
-    for city in cities:
-        print(city,end=" ")
+def element_in_line(list):
+    for item in list:
+        print(item,end=" ")
 element_in_line(cities)
 
 #WAF to find the factorial of n
@@ -42,11 +42,10 @@ def fact_calc(n):
     for i in range(1,n+1):
         result*=i
     return result
-print(f"The factorial is : {fact_calc(8)}")
+print(f"\nThe factorial is : {fact_calc(0)}")
 
 #WAF to convert USD to PKR
 def currency_converter(USD):
-    USD_1=281.94
-    PKR=USD*USD_1
+    PKR=USD*281.94
     return PKR
-print(f"The converted amount in rupees is : {currency_converter(9):.2f}")
+print(f"The converted amount in rupees is = {currency_converter(9):.2f} PKR")
