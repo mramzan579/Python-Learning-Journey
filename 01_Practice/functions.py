@@ -23,3 +23,28 @@ def even_odd_check(a):
     
 even_odd_check(5)
 
+#WAF to find the length of list in argument
+def len_calc(nums=[]):
+    return len(nums)
+length=len_calc([1,2,3,2,3,4,5,4,3,6,4,5])
+print(length)
+
+#WAF to print elements of  alist in single line
+def sing_line_display(elements=[]):
+    print(elements)
+sing_line_display([2,4,5,3,4,6,8,9,5,0,7,3,5,6,2,3])
+
+#WAF to find the factorial of n
+def fact_calc(n):
+    result=1
+    for i in range(1,n+1):
+        result*=i
+    return result
+print(f"The factorial is : {fact_calc(8)}")
+
+#WAF to convert USD to PKR
+def currency_converter(USD):
+    USD_1=281.94
+    PKR=USD*USD_1
+    return PKR
+print(f"The converted amount in rupees is : {currency_converter(9):.2f}")
