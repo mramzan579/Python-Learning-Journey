@@ -1,0 +1,11 @@
+f=open('robo.txt','r+')
+data='Robo is Online\nBattery 100%'
+f.write(data)
+f.seek(0)
+print(f.read())
+f.close()
+f=open('robo.txt','a+')
+f.write("\nStatus: Exploring")
+f.seek(0)
+print(f.read())
+f.close()
