@@ -51,3 +51,46 @@ phone1.app("Instagram")
 phone1.app("WhatsApp")
 phone2.app("Facebook")
 phone1.show_apps()
+
+class NumberSet:
+     def __init__(self, val1, val2):
+          self.val1=val1
+          self.val2=val2
+t=NumberSet(6,10)
+
+# CHALLENGE 4: ANIMAL LIMBS CALCULATOR
+class Animal():
+    def __init__(self, arms, legs):
+        self.arms=arms
+        self.legs=legs
+    def limbs(self):
+        return self.arms+self.legs
+spider=Animal(4,4)
+spidlimbs=spider.limbs()
+
+#CHALLENGE 5: PUBLIC VS PRIVATE PERSON ATTRIBUTES 
+class person():
+     def __init__(self, name):
+          self.name=name
+     def get_first_name(self):
+          return self.name.split()[0]
+     def get_last_name(self):
+          return self.name.split()[-1]  
+person1=person("John Doe")
+print(person1.get_first_name())
+print(person1.get_last_name())
+print(person1.name)
+
+class person():
+     def __init__(self, name):
+          self.__name=name
+     def get_first_name(self):
+          return self.__name.split()[0]
+     def get_last_name(self):
+          return self.__name.split()[-1]  
+person1=person("John Doe")
+print(person1._person__name)  # Accessing the private attribute using name mangling
+print(person1.get_first_name())
+print(person1.get_last_name())
+
+
