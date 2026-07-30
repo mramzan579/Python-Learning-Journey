@@ -82,3 +82,17 @@ with open("ai_confige.txt","w") as f:
      f.write(new_data)
 with open("ai_confige.txt","r") as f:
      print(f.read())
+
+# CHALLENGE 7: File Deletion, readline(), and readlines()
+with open("factory.txt","w") as f:
+     f.write("Robot_A: Online\nRobot_B: Offline\nRobot_C: Maintenance")
+with open("factory.txt","r") as f:
+     print(f.readline().strip())
+     print(f.readline().strip())
+with open("factory.txt","r") as f:
+     print(f.readlines()[-1].strip())
+import os
+os.remove("factory.txt")
+print("File factory.txt has been deleted.")
+
+
