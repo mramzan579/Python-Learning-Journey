@@ -116,3 +116,106 @@ class child(camera, alarm_system):
 
 device1 = child("SecurityCam", "1080p")
 print(device1.detect_motion())
+
+#multilevel inheritance example(order processing system)
+# Level 1: Base Class (Parent)
+# Base class jo core order data aur primary price structure define karti hai.
+class base_order:
+    def __init__(self, order_id, base_price):
+        self.order_id = order_id
+        self.base_price = base_price
+
+    def get_total(self):
+        return self.base_price
+
+# Level 2: Child Class (Inherits from base_order)
+# Tax logic add karti hai aur super().get_total() se base price fetch karti hai.
+class taxed_order(base_order):
+    def __init__(self, order_id, base_price, tax_rate):
+        super().__init__(order_id, base_price)  # Pass base data to Level 1
+        self.tax_rate = tax_rate
+
+    def get_total(self):
+        tax_amount = self.base_price * self.tax_rate / 100
+        final = super().get_total() + tax_amount  # Base Price + Tax
+        return final
+# Level 3: Grandchild Class (Inherits from taxed_order)
+# Discount apply karti hai. super().get_total() pehle Level 2 se taxed amount laata hai.
+class discounted_taxed_order(taxed_order):
+    def __init__(self, order_id, base_price, tax_rate, discount_amount):
+        super().__init__(order_id, base_price, tax_rate)  # Pass data to Level 2
+        self.discount_amount = discount_amount
+
+    def get_total(self):
+        discounted = super().get_total() - self.discount_amount  # (Base + Tax) - Discount
+        return discounted
+
+emp1 = base_order(101, 500)
+print(f"Base Order Total: {emp1.get_total()}")  # Output: 500
+
+emp2 = taxed_order(102, 500, 10)
+print(f"Taxed Order Total: {emp2.get_total()}")  # Output: 550.0
+
+emp3 = discounted_taxed_order(103, 500, 10, 50)
+print(f"Discounted Taxed Order Total: {emp3.get_total()}")  # Output: 500.0
+
+#hierarchical inheritance example(employee payroll system)
+# Base Class: employee
+class employee:
+    def __init__(self, emp_id, name, base_salary):
+        self.emp_id = emp_id
+        self.name = name
+        self.base_salary = base_salary
+# Method to calculate salary for base employee
+    def calculate_salary(self):
+        return self.base_salary
+# Derived Class: developer inherits from employee
+class developer(employee):
+    def __init__(self, emp_id, name, base_salary, bonus):
+        super().__init__(emp_id, name, base_salary)
+        self.bonus = bonus
+
+    def calculate_salary(self):
+        return super().calculate_salary() + self.bonus
+# Derived Class: manager inherits from employee
+class manager(employee):
+    def __init__(self, emp_id, name, base_salary, allowance):
+        employee.__init__(self, emp_id, name, base_salary)
+        self.allowance = allowance
+    def calculate_salary(self):
+        return employee.calculate_salary(self) + self.allowance
+#testing the classes
+ali=employee(1,"ali",50000)
+print(f"Employee Salary: {ali.calculate_salary()}")  # Output: 50000
+ahmed=developer(2,"ahmed",60000,10000)
+print(f"developer salary: {ahmed.calculate_salary()}")  # Output: 70000
+sara=manager(3,"sara",70000,15000)
+print(f"Manager Salary: {sara.calculate_salary()}")  # Output: 85000
+
+#hybrid inheritance example(Gaming Character Abilities)
+# Base Class: character
+class character:
+    def __init__(self, name):
+        self.name = name
+class warrior(character):
+    def __init__(self,name):
+        super().__init__(name)
+    # Method to simulate an attack action for the warrior class
+    def attack(self):
+        return f"{self.name} attacks the sword."
+# Derived Class: mage inherits from character
+class mage(character):
+    def __init__(self,name):
+        super().__init__(name)
+    def cast_spell(self):
+        return f"{self.name} casts a fireball."
+# Derived Class: paladin inherits from both warrior and mage (Multiple Inheritance)
+class paladin(warrior,mage):
+    def __init__(self,name):
+        super().__init__(name)
+    # Method to combine abilities from both parent classes (warrior and mage)
+    def ultimate_move(self):
+        return f"{self.name} perofrmed tasks like : {self.attack()} and {self.cast_spell()}"
+#testing the paladin class
+ali=paladin("ali")
+print(ali.ultimate_move())
