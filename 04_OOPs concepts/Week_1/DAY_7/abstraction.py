@@ -136,3 +136,80 @@ s1.upload_file("example.txt")
 
 s2 = AWSS3Storage()
 s2.upload_file("example.txt")
+
+# =============================================================
+# Challenge 4: Notification Engine
+# =============================================================
+# Multi-channel notification engine with a polymorphic batch dispatcher
+
+class NotificationService(ABC):
+    @abstractmethod
+    def send_notification(self, recipient, message):
+        pass
+
+
+class EmailService(NotificationService):
+    def send_notification(self, recipient, message):
+        print(f"Sending Email to {recipient}: {message}")
+
+
+class SMSService(NotificationService):
+    def send_notification(self, recipient, message):
+        print(f"Sending SMS to {recipient}: {message}")
+
+
+class WhatsAppService(NotificationService):
+    def send_notification(self, recipient, message):
+        print(f"Sending WhatsApp message to {recipient}: {message}")
+
+
+# Helper function to broadcast message across all enabled channels
+def send_bulk_alerts(services_list, recipient, message):
+    for service in services_list:
+        service.send_notification(recipient, message)
+
+
+# --- Testing Challenge 4 ---
+channels = [EmailService(), SMSService(), WhatsAppService()]
+send_bulk_alerts(channels, "user@example.com / 03491943858", "System Maintenance at 12:00 AM")
+
+# =============================================================
+# Challenge 5: AI Model Wrapper
+# =============================================================
+
+class LLMProvider(ABC):
+    @abstractmethod
+    def generate_response(self, prompt):
+        pass
+
+    @abstractmethod
+    def get_token_count(self, text):
+        pass
+
+
+class OpenAIProvider(LLMProvider):
+    def generate_response(self, prompt):
+        return f"[OpenAI GPT-4o]: Responding to '{prompt}'..."
+
+    def get_token_count(self, text):
+        return len(text) // 4
+
+
+class GeminiProvider(LLMProvider):
+    def generate_response(self, prompt):
+        return f"[Google Gemini 1.5]: Responding to '{prompt}'..."
+
+    def get_token_count(self, text):
+        return len(text) // 4
+
+
+# --- Testing Challenge 5 ---
+ai1 = OpenAIProvider()
+print(ai1.generate_response("Explain FastAPI in 1 line"))
+print(f"Token Count: {ai1.get_token_count('Explain FastAPI in 1 line')}")
+
+print("-" * 40)
+
+ai2 = GeminiProvider()
+print(ai2.generate_response("Explain FastAPI in 1 line"))
+print(f"Token Count: {ai2.get_token_count('Explain FastAPI in 1 line')}")
