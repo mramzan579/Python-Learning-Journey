@@ -1,4 +1,4 @@
-```markdown
+
 # 🚀 Python & Backend Engineering Journey
 
 Welcome to my comprehensive Python and Backend Engineering repository. This repo documents a hands-on, progressive learning roadmap covering core Python computational logic, utility script architecture, exception-safe file handling, production-ready Object-Oriented Programming (OOP) designs, and modern asynchronous FastAPI backend engineering.
@@ -212,7 +212,7 @@ Modern asynchronous web API development focused on high-performance backend syst
 
 1. **Clone the repository:**
 ```bash
-git clone [https://github.com/your-username/PYTHON-LEARNING-JOURNEY.git](https://github.com/your-username/PYTHON-LEARNING-JOURNEY.git)
+git clone [https://github.com/mramzan579/Python-Learning-Journey.git]
 cd PYTHON-LEARNING-JOURNEY
 
 ```
