@@ -51,8 +51,10 @@ delete_user(123, role="admin")  # Should allow deletion
 delete_user(456, role="user")   # Should deny access
 
 #repeat/retry execution decorator
+from functools import wraps
 def repeat_execution(n):
     def wrapper(func):
+        @wraps(func)
         def inner_wrapper(*args, **kwargs):
             for i in range(n):
                 print(f"Attempt {i + 1} of {n}")
